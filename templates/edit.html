@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<section class="content">
+  <div class="main-header">
+    <img src="/static/img/user.png" class="logo" />
+    <h1 class="edit_heading">Edit</h1>
+  </div>
+  <section class="edit_form">
+    <form
+      action="/edit/{{post.id}}/"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        value="{{post.name}}"
+        class="edit_input"
+      />
+      <textarea
+        name="body"
+        placeholder="What's Happening?"
+        class="edit_textarea"
+        required
+      >
+{{post.body}}</textarea
+      >
+      <label for="{{post.name}}"></label>
+
+      {% if post.image.url %}
+      <img class="post-border" src="{{ post.image.url }}" />
+      {% endif %}
+
+      <div class="flex">
+        <input class="editpage_image" name="image" type="file" />
+        <div class="b1">
+          <button class="cancel-button">Cancel</button>
+          <button class="update-button">Update</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</section>
+{% endblock %}
