@@ -15,7 +15,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
-
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -88,16 +88,17 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d8ig2k2imm3p8",
-        "USER": "yncvlyqrlblgtj",
-        "HOST": "ec2-107-20-127-127.compute-1.amazonaws.com",
-        "PORT": 5432,
-        "PASSWORD": "d811884086bc95c00bab1379845768e699812cba8e0a9a12fee25d24e7447f44",
-    }
-}
+# DATABASES = {
+#     'default': {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "d8ig2k2imm3p8",
+#         "USER": "yncvlyqrlblgtj",
+#         "HOST": "ec2-107-20-127-127.compute-1.amazonaws.com",
+#         "PORT": 5432,
+#         "PASSWORD": "d811884086bc95c00bab1379845768e699812cba8e0a9a12fee25d24e7447f44",
+#     }
+# }
+django_heroku.settings(locals())
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
