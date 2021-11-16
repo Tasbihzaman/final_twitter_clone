@@ -39,10 +39,11 @@ def delete(request, post_id):
     return HttpResponseRedirect('/')
 
 
-def likes(request, id):
-    likedtweet = Post.objects.get(id=id)
-    likedtweet.like_count += 1
-    likedtweet.save()
+def LikeView(request,post_id):
+    post=Post.objects.get(id=post_id)
+    new_value=post.likes +1
+    post.likes=new_value
+    post.save()
     return HttpResponseRedirect('/')
 
 
