@@ -28,8 +28,7 @@ def index(request):
     form = PostForm()
 
     # show
-    return render(request, 'posts.html',
-                  {'posts': posts})
+    return render(request, 'posts.html', {'posts': posts})
 
 
 def delete(request, post_id):
