@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/musubiappleidgmail.com/Desktop/ClientError/mdazar/deploy/Twitter_Clone/env"
+set -gx VIRTUAL_ENV "/Users/mdaktaruzzaman/Desktop/deploy/Final_Twitter_Clone/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

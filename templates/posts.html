@@ -60,12 +60,11 @@
               style="width:370px height=370px;"
             />
             <div class="bodylike">
-              <form action="{% url 'like_post' post.pk %}" method='POST'>
-                {% csrf_token %}
-                
-            <button id="like" type="submit" name="post_id" value="{{ post.id }}" href="post_id">Like</button>
-            {{ post.likes }}
-          </form>
+              <a href="/like/{{post.id}}">
+                <img src="/static/img/heart.png" style="width: 30px"
+              /></a>
+
+              {{ post.likecount }}
             </div>
           </div>
         </li>

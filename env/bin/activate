@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/musubiappleidgmail.com/Desktop/ClientError/mdazar/deploy/Twitter_Clone/env"
+VIRTUAL_ENV="/Users/mdaktaruzzaman/Desktop/deploy/Final_Twitter_Clone/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

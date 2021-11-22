@@ -5,22 +5,22 @@ from .models import Post
 from .forms import PostForm
 from django.shortcuts import render
 
-# Create your views here.
+
 
 
 def index(request):
-    # if the method is post
+    
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
-        # if the form is validif
+        
         if form.is_valid():
-            #yes, save
+            
             form.save()
 
-            # redirect to home
+           
             return HttpResponseRedirect('/')
         else:
-            # no, show error
+           
             return HttpResponseRedirect(form.errors.as_json())
 
     # Get all posts , limit=20
@@ -39,11 +39,10 @@ def delete(request, post_id):
     return HttpResponseRedirect('/')
 
 
-def LikeView(request,post_id):
-    post=Post.objects.get(id=post_id)
-    new_value=post.likes +1
-    post.likes=new_value
-    post.save()
+def like(request, post_id):
+    newlikecount = Post.objects.get(id=post_id)
+    newlikecount.likecount += 1
+    newlikecount.save()
     return HttpResponseRedirect('/')
 
 
